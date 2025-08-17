@@ -44,6 +44,13 @@ export function AboutSection() {
                 Découvrir Nos Réalisations
               </Button>
               <Button
+                // href="https://maghrebgrillage.ma/wp-content/uploads/2019/09/MAGHREB-GRILLAGE-BROCH-2019-FINAL.pdf"
+                onClick={() => {
+                  window.open(
+                    "https://maghrebgrillage.ma/wp-content/uploads/2019/09/MAGHREB-GRILLAGE-BROCH-2019-FINAL.pdf",
+                    "_blank" // open in new tab
+                  );
+                }}
                 size="lg"
                 variant="outline"
                 className="cursor-pointer border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
@@ -61,7 +68,7 @@ export function AboutSection() {
             />
 
             {/* Stats overlay */}
-            <div className="absolute md:-bottom-8 md:-left-8 bg-card border border-border rounded-lg p-6 shadow-xl">
+            <div className="absolute bottom-0 left-0 md:-bottom-8 md:-left-8 bg-card border border-border rounded-lg p-6 shadow-xl">
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
                   <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-2">

@@ -9,6 +9,7 @@ import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 import { useEffect, useState } from "react";
 import Loading from "@/components/Loading";
+import ReferenceSection from "@/components/refference-section";
 
 export default function HomePage() {
   const [loading, setLoading] = useState(true);
@@ -33,6 +34,7 @@ export default function HomePage() {
           <AboutSection />
           <TestimonialsSection />
           <ContactSection />
+          <ReferenceSection />
           <Footer />
         </>
       )}
