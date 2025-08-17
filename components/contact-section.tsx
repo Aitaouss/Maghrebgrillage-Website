@@ -1,8 +1,8 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Phone, Mail, MapPin, Clock } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export function ContactSection() {
   return (
@@ -13,8 +13,9 @@ export function ContactSection() {
             Contactez-<span className="text-primary">Nous</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-sans">
-            Prêt à démarrer votre projet ? Notre équipe d'experts est à votre disposition pour vous conseiller et
-            établir un devis personnalisé gratuit.
+            Prêt à démarrer votre projet ? Notre équipe d'experts est à votre
+            disposition pour vous conseiller et établir un devis personnalisé
+            gratuit.
           </p>
         </div>
 
@@ -29,22 +30,40 @@ export function ContactSection() {
             <CardContent className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm font-medium text-card-foreground mb-2 block font-sans">Nom complet *</label>
-                  <Input placeholder="Votre nom" className="bg-input border-border" />
+                  <label className="text-sm font-medium text-card-foreground mb-2 block font-sans">
+                    Nom complet *
+                  </label>
+                  <Input
+                    placeholder="Votre nom"
+                    className="bg-input border-border"
+                  />
                 </div>
                 <div>
-                  <label className="text-sm font-medium text-card-foreground mb-2 block font-sans">Téléphone *</label>
-                  <Input placeholder="+212 6XX XXX XXX" className="bg-input border-border" />
+                  <label className="text-sm font-medium text-card-foreground mb-2 block font-sans">
+                    Téléphone *
+                  </label>
+                  <Input
+                    placeholder="+212 6XX XXX XXX"
+                    className="bg-input border-border"
+                  />
                 </div>
               </div>
 
               <div>
-                <label className="text-sm font-medium text-card-foreground mb-2 block font-sans">Email *</label>
-                <Input type="email" placeholder="votre@email.com" className="bg-input border-border" />
+                <label className="text-sm font-medium text-card-foreground mb-2 block font-sans">
+                  Email *
+                </label>
+                <Input
+                  type="email"
+                  placeholder="votre@email.com"
+                  className="bg-input border-border"
+                />
               </div>
 
               <div>
-                <label className="text-sm font-medium text-card-foreground mb-2 block font-sans">Type de projet</label>
+                <label className="text-sm font-medium text-card-foreground mb-2 block font-sans">
+                  Type de projet
+                </label>
                 <select className="w-full p-3 rounded-md border border-border bg-input text-foreground font-sans">
                   <option>Clôture résidentielle</option>
                   <option>Clôture commerciale</option>
@@ -80,11 +99,17 @@ export function ContactSection() {
                     <Phone className="h-6 w-6 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-card-foreground font-sans">Téléphone</h3>
-                    <p className="text-muted-foreground font-sans">Appelez-nous directement</p>
+                    <h3 className="font-bold text-card-foreground font-sans">
+                      Téléphone
+                    </h3>
+                    <p className="text-muted-foreground font-sans">
+                      Appelez-nous directement
+                    </p>
                   </div>
                 </div>
-                <p className="text-lg font-semibold text-primary font-sans">+212 5 22 48 85 85</p>
+                <p className="text-lg font-semibold font-sans">
+                  +212 5 22 48 85 85
+                </p>
               </CardContent>
             </Card>
 
@@ -95,11 +120,17 @@ export function ContactSection() {
                     <Mail className="h-6 w-6 text-accent-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-card-foreground font-sans">Email</h3>
-                    <p className="text-muted-foreground font-sans">Écrivez-nous</p>
+                    <h3 className="font-bold text-card-foreground font-sans">
+                      Email
+                    </h3>
+                    <p className="text-muted-foreground font-sans">
+                      Écrivez-nous
+                    </p>
                   </div>
                 </div>
-                <p className="text-lg font-semibold text-primary font-sans">contact@maghrebgrillage.ma</p>
+                <p className="text-lg font-semibold  font-sans">
+                  contact@maghrebgrillage.ma
+                </p>
               </CardContent>
             </Card>
 
@@ -110,11 +141,15 @@ export function ContactSection() {
                     <MapPin className="h-6 w-6 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-card-foreground font-sans">Adresse</h3>
-                    <p className="text-muted-foreground font-sans">Visitez notre showroom</p>
+                    <h3 className="font-bold text-card-foreground font-sans">
+                      Adresse
+                    </h3>
+                    <p className="text-muted-foreground font-sans">
+                      Visitez notre showroom
+                    </p>
                   </div>
                 </div>
-                <p className="text-lg font-semibold text-primary font-sans">
+                <p className="text-lg font-semibold  font-sans">
                   Zone Industrielle Sidi Bernoussi
                   <br />
                   Casablanca, Maroc
@@ -129,11 +164,15 @@ export function ContactSection() {
                     <Clock className="h-6 w-6 text-accent-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-card-foreground font-sans">Horaires</h3>
-                    <p className="text-muted-foreground font-sans">Nos heures d'ouverture</p>
+                    <h3 className="font-bold text-card-foreground font-sans">
+                      Horaires
+                    </h3>
+                    <p className="text-muted-foreground font-sans">
+                      Nos heures d'ouverture
+                    </p>
                   </div>
                 </div>
-                <div className="text-primary font-semibold">
+                <div className=" font-semibold">
                   <p>Lun-Ven: 8h00 - 18h00</p>
                   <p>Samedi: 8h00 - 16h00</p>
                   <p>Dimanche: Fermé</p>
@@ -144,5 +183,5 @@ export function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

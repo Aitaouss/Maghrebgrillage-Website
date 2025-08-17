@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Chivo:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Mono:wght@100..900&display=swap");
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -11,24 +13,20 @@
   --card-foreground: oklch(0.3 0.01 220); /* #444d55 */
   --popover: oklch(1 0 0); /* #ffffff */
   --popover-foreground: oklch(0.3 0.01 220); /* #444d55 */
-  /* Changed primary green back to original #02742c */
-  --primary: oklch(0.25 0.12 140); /* #02742c - original green */
+  --primary: #02742c; /* #02742c - original green */
   --primary-foreground: oklch(1 0 0); /* #ffffff */
   --secondary: oklch(0.3 0.01 220); /* #444d55 */
   --secondary-foreground: oklch(1 0 0); /* #ffffff */
   --muted: oklch(0.96 0.005 220); /* #f1f2f3 */
   --muted-foreground: oklch(0.5 0.01 220); /* #6b7280 */
-  /* Updated accent color to match the original green */
-  --accent: oklch(0.25 0.12 140); /* #02742c - original green */
+  --accent: #02742c; /* #02742c */
   --accent-foreground: oklch(1 0 0); /* #ffffff */
   --destructive: oklch(0.55 0.25 25); /* #dc2626 */
   --destructive-foreground: oklch(1 0 0); /* #ffffff */
   --border: oklch(0.9 0.005 220); /* #e2e4e6 */
   --input: oklch(0.98 0.005 220); /* #f7f8f9 */
-  /* Updated ring color to match the original green */
-  --ring: oklch(0.25 0.12 140); /* #02742c - original green */
-  /* Updated chart colors to use the original green */
-  --chart-1: oklch(0.25 0.12 140); /* #02742c - original green */
+  --ring: oklch(0.25 0.12 140); /* #02742c */
+  --chart-1: oklch(0.25 0.12 140); /* #02742c */
   --chart-2: oklch(0.3 0.01 220); /* #444d55 */
   --chart-3: oklch(0.4 0.02 220); /* #5a6269 */
   --chart-4: oklch(0.5 0.01 220); /* #6b7280 */
@@ -36,14 +34,12 @@
   --radius: 0.5rem;
   --sidebar: oklch(0.98 0.01 140); /* #f8faf9 */
   --sidebar-foreground: oklch(0.3 0.01 220); /* #444d55 */
-  /* Updated sidebar colors to use the original green */
-  --sidebar-primary: oklch(0.25 0.12 140); /* #02742c - original green */
+  --sidebar-primary: oklch(0.25 0.12 140); /* #02742c */
   --sidebar-primary-foreground: oklch(1 0 0); /* #ffffff */
   --sidebar-accent: oklch(0.3 0.01 220); /* #444d55 */
   --sidebar-accent-foreground: oklch(1 0 0); /* #ffffff */
   --sidebar-border: oklch(0.9 0.005 220); /* #e2e4e6 */
-  /* Updated sidebar ring to use the original green */
-  --sidebar-ring: oklch(0.25 0.12 140); /* #02742c - original green */
+  --sidebar-ring: oklch(0.25 0.12 140); /* #02742c */
 }
 
 .dark {
@@ -119,9 +115,10 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  /* Updated font families to use Xenois Super Pro Regular */
-  --font-sans: "Xenois Super Pro", system-ui, -apple-system, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* ✅ Updated font families to use Cairo + Noto Sans Mono */
+  --font-sans: "Arial", "Helvetica Neue", "Helvetica", "Cairo", sans-serif;
+  --font-mono: "Noto Sans Mono", ui-monospace, SFMono-Regular, Monaco, Consolas,
+    "Liberation Mono", monospace;
 }
 
 @layer base {
@@ -139,20 +136,17 @@
   h4,
   h5,
   h6 {
-    font-family: var(--font-sans);
-    font-weight: 400;
+    font-family: "Noto Sans Mono", monospace;
+    font-weight: 600;
   }
 }
 
-/* Added proper Xenois Super Pro font import */
-@import url("https://fonts.cdnfonts.com/css/xenois-super-pro");
-
-/* Added custom section header style inspired by the provided image */
+/* ✅ Custom section header style */
 .section-header {
   position: relative;
   display: inline-block;
   font-size: 1.125rem;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--color-foreground);
@@ -168,3 +162,11 @@
   height: 2px;
   background-color: var(--color-primary);
 }
+
+/* 
+Breakpoint prefix	Minimum width	CSS
+sm	40rem (640px)	@media (width >= 40rem) { ... }
+md	48rem (768px)	@media (width >= 48rem) { ... }
+lg	64rem (1024px)	@media (width >= 64rem) { ... }
+xl	80rem (1280px)	@media (width >= 80rem) { ... }
+2xl	96rem (1536px)	@media (width >= 96rem) { ... } */

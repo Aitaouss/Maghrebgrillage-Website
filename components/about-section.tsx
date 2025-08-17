@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button"
-import { CheckCircle, Award, Users } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { CheckCircle, Award, Users } from "lucide-react";
 
 const features = [
   "Matériaux de qualité supérieure certifiés",
@@ -8,7 +8,7 @@ const features = [
   "Service après-vente réactif et efficace",
   "Devis gratuit et personnalisé",
   "Respect des délais convenus",
-]
+];
 
 export function AboutSection() {
   return (
@@ -17,12 +17,14 @@ export function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-4xl md:text-5xl font-black mb-6 text-foreground font-sans">
-              Pourquoi Choisir <span className="text-primary">Maghreb Grillage</span> ?
+              Pourquoi Choisir{" "}
+              <span className="text-primary">Maghreb Grillage</span> ?
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed font-sans">
-              Depuis plus de 15 ans, nous sommes le partenaire de confiance des particuliers et entreprises au Maroc
-              pour leurs projets de clôture et sécurisation. Notre expertise reconnue et notre engagement qualité font
-              de nous le leader du secteur.
+              Depuis plus de 15 ans, nous sommes le partenaire de confiance des
+              particuliers et entreprises au Maroc pour leurs projets de clôture
+              et sécurisation. Notre expertise reconnue et notre engagement
+              qualité font de nous le leader du secteur.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -35,13 +37,16 @@ export function AboutSection() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              <Button
+                size="lg"
+                className="cursor-pointer bg-primary hover:bg-primary/90 text-primary-foreground"
+              >
                 Découvrir Nos Réalisations
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+                className="cursor-pointer border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
               >
                 Télécharger Notre Catalogue
               </Button>
@@ -50,13 +55,13 @@ export function AboutSection() {
 
           <div className="relative">
             <img
-              src="/placeholder-u7348.png"
+              src="https://maghrebgrillage.ma/wp-content/uploads/2015/10/486195147-pare-ballon-2-1000x430.jpg"
               alt="Équipe professionnelle Maghreb Grillage"
               className="w-full rounded-lg shadow-2xl"
             />
 
             {/* Stats overlay */}
-            <div className="absolute -bottom-8 -left-8 bg-card border border-border rounded-lg p-6 shadow-xl">
+            <div className="absolute md:-bottom-8 md:-left-8 bg-card border border-border rounded-lg p-6 shadow-xl">
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
                   <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-2">
@@ -78,5 +83,5 @@ export function AboutSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

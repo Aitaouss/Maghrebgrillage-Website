@@ -1,8 +1,33 @@
-import { Button } from "@/components/ui/button"
-import { Phone, Mail, MapPin } from "lucide-react"
-import Image from "next/image"
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { IoList } from "react-icons/io5";
+
+import { Phone, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
 
 export function Header() {
+  const [sizeLg, setSizeLg] = useState<number>(0);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleResize = () => {
+    setSizeLg(window.innerWidth);
+  };
+
+  // Add event listener for window resize
+  if (typeof window !== "undefined") {
+    window.addEventListener("resize", handleResize);
+  }
+
+  const handleScrollTo = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      window.scrollTo({ top: element.offsetTop, behavior: "smooth" });
+    }
+    setMobileMenuOpen(false); // close mobile menu after click
+  };
+
   return (
     <header className="bg-background border-b border-border sticky top-0 z-50">
       <div className="container mx-auto px-4">
@@ -22,47 +47,131 @@ export function Header() {
               <span>Casablanca, Maroc</span>
             </div>
           </div>
-          <div className="text-primary font-medium">Lun-Ven: 8h00-18h00 | Sam: 8h00-16h00</div>
+          <div className=" font-medium">
+            Lun-Ven: 8h00-18h00 | Sam: 8h00-16h00
+          </div>
         </div>
 
         {/* Main navigation */}
-        <div className="flex items-center justify-between py-4">
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 relative">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3 py-4">
+            <div
+              className="relative cursor-pointer"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
               <Image
-                src="/images/maghreb-grillage-logo.jpg"
+                src="http://maghrebgrillage.ma/wp-content/uploads/2015/10/MA6033547-3085-B1.jpg"
                 alt="Maghreb Grillage Logo"
-                fill
-                className="object-contain rounded-lg"
+                // fill
+                className="object-contain rounded-lg cursor-pointer"
+                width={200}
+                height={200}
               />
             </div>
-            <div>
-              <h1 className="text-xl font-bold text-foreground font-sans">Maghreb Grillage</h1>
-              <p className="text-sm text-muted-foreground font-sans">Solutions Professionnelles</p>
-            </div>
           </div>
+          {sizeLg > 1024 ? (
+            <nav className="hidden lg:flex items-center gap-8">
+              <a
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                className="text-foreground hover:text-[#02742c] transition-all duration-200 cursor-pointer"
+              >
+                Accueil
+              </a>
+              <a
+                // href="#services"
+                onClick={() =>
+                  window.scrollTo({
+                    top: document.getElementById("services")?.offsetTop || 0,
+                    behavior: "smooth",
+                  })
+                }
+                className="text-foreground hover:text-[#02742c] transition-all dration-200 cursor-pointer"
+              >
+                Nos Services
+              </a>
+              <a
+                href="#produits"
+                onClick={() =>
+                  window.scrollTo({
+                    top: document.getElementById("produits")?.offsetTop || 0,
+                    behavior: "smooth",
+                  })
+                }
+                className="text-foreground hover:text-[#02742c] transition-all duration-200 cursor-pointer"
+              >
+                Produits
+              </a>
+              <a
+                onClick={() =>
+                  window.scrollTo({
+                    top: document.getElementById("a-propos")?.offsetTop || 0,
+                    behavior: "smooth",
+                  })
+                }
+                className="text-foreground hover:text-[#02742c] transition-all duration-200 cursor-pointer"
+              >
+                À Propos
+              </a>
+              <a
+                onClick={() =>
+                  window.scrollTo({
+                    top: document.getElementById("contact")?.offsetTop || 0,
+                    behavior: "smooth",
+                  })
+                }
+                className="text-foreground hover:text-[#02742c] transition-all duration-200 cursor-pointer"
+              >
+                Contact
+              </a>
+            </nav>
+          ) : (
+            <div
+              className="relative flex items-center justify-center cursor-pointer"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              <IoList size={30} color="#444d55" />
+            </div>
+          )}
 
-          <nav className="hidden lg:flex items-center gap-8">
-            <a href="#accueil" className="text-foreground hover:text-primary transition-colors">
+          {/* <Button className="cursor-pointer bg-primary hover:bg-primary/90 text-primary-foreground">
+            Demander un Devis
+          </Button> */}
+        </div>
+        {mobileMenuOpen && (
+          <div className="lg:hidden bg-background border-t border-border mt-2 p-4 flex flex-col gap-4 text-foreground">
+            <a
+              onClick={() => handleScrollTo("accueil")}
+              className="cursor-pointer hover:text-[#02742c]"
+            >
               Accueil
             </a>
-            <a href="#services" className="text-foreground hover:text-primary transition-colors">
+            <a
+              onClick={() => handleScrollTo("services")}
+              className="cursor-pointer hover:text-[#02742c]"
+            >
               Nos Services
             </a>
-            <a href="#produits" className="text-foreground hover:text-primary transition-colors">
+            <a
+              onClick={() => handleScrollTo("produits")}
+              className="cursor-pointer hover:text-[#02742c]"
+            >
               Produits
             </a>
-            <a href="#a-propos" className="text-foreground hover:text-primary transition-colors">
+            <a
+              onClick={() => handleScrollTo("a-propos")}
+              className="cursor-pointer hover:text-[#02742c]"
+            >
               À Propos
             </a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors">
+            <a
+              onClick={() => handleScrollTo("contact")}
+              className="cursor-pointer hover:text-[#02742c]"
+            >
               Contact
             </a>
-          </nav>
-
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">Demander un Devis</Button>
-        </div>
+          </div>
+        )}
       </div>
     </header>
-  )
+  );
 }
