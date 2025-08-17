@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Award, Users } from "lucide-react";
+import { IoMdDownload } from "react-icons/io";
 
 const features = [
   "Matériaux de qualité supérieure certifiés",
@@ -55,6 +56,7 @@ export function AboutSection() {
                 variant="outline"
                 className="cursor-pointer border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
               >
+                <IoMdDownload className="mr-2 h-5 w-5" />
                 Télécharger Notre Catalogue
               </Button>
             </div>
