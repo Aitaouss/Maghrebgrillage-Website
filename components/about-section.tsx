@@ -16,7 +16,7 @@ export function AboutSection() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-black mb-6 text-foreground font-sans">
+            <h2 className="text-4xl md:text-5xl font-black mb-6 text-foreground">
               Pourquoi Choisir{" "}
               <span className="text-primary">Maghreb Grillage</span> ?
             </h2>

@@ -5,7 +5,7 @@ import { IoList } from "react-icons/io5";
 
 import { Phone, Mail, MapPin } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function Header() {
   const [sizeLg, setSizeLg] = useState<number>(0);
@@ -16,9 +16,13 @@ export function Header() {
   };
 
   // Add event listener for window resize
-  if (typeof window !== "undefined") {
+  useEffect(() => {
+    handleResize(); // Set initial size
     window.addEventListener("resize", handleResize);
-  }
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handleScrollTo = (id: string) => {
     const element = document.getElementById(id);
@@ -73,7 +77,7 @@ export function Header() {
             <nav className="hidden lg:flex items-center gap-8">
               <a
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                className="text-foreground hover:text-[#02742c] transition-all duration-200 cursor-pointer"
+                className="text-foreground hover:text-[#02742c] transition-all duration-200 cursor-pointer hover:border-b-2 hover:border-[#02742c] hover:pb-1"
               >
                 Accueil
               </a>
@@ -85,7 +89,7 @@ export function Header() {
                     behavior: "smooth",
                   })
                 }
-                className="text-foreground hover:text-[#02742c] transition-all dration-200 cursor-pointer"
+                className="text-foreground hover:text-[#02742c] transition-all dration-200 cursor-pointer hover:border-b-2 hover:border-[#02742c] hover:pb-1"
               >
                 Nos Services
               </a>
@@ -97,7 +101,7 @@ export function Header() {
                     behavior: "smooth",
                   })
                 }
-                className="text-foreground hover:text-[#02742c] transition-all duration-200 cursor-pointer"
+                className="text-foreground hover:text-[#02742c] transition-all duration-200 cursor-pointer hover:border-b-2 hover:border-[#02742c] hover:pb-1"
               >
                 Produits
               </a>
@@ -108,7 +112,7 @@ export function Header() {
                     behavior: "smooth",
                   })
                 }
-                className="text-foreground hover:text-[#02742c] transition-all duration-200 cursor-pointer"
+                className="text-foreground hover:text-[#02742c] transition-all duration-200 cursor-pointer hover:border-b-2 hover:border-[#02742c] hover:pb-1"
               >
                 À Propos
               </a>
@@ -119,7 +123,7 @@ export function Header() {
                     behavior: "smooth",
                   })
                 }
-                className="text-foreground hover:text-[#02742c] transition-all duration-200 cursor-pointer"
+                className="text-foreground hover:text-[#02742c] transition-all duration-200 cursor-pointer hover:border-b-2 hover:border-[#02742c] hover:pb-1"
               >
                 Contact
               </a>

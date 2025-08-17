@@ -9,7 +9,7 @@ export function ContactSection() {
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black mb-6 text-foreground font-sans">
+          <h2 className="text-4xl md:text-5xl font-black mb-6 text-foreground">
             Contactez-<span className="text-primary">Nous</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-sans">
@@ -84,7 +84,7 @@ export function ContactSection() {
                 />
               </div>
 
-              <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-lg py-3 font-sans">
+              <Button className="cursor-pointer w-full bg-primary hover:bg-primary/90 text-primary-foreground text-lg py-3 font-sans">
                 Envoyer ma Demande
               </Button>
             </CardContent>
