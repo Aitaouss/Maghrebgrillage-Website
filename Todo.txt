@@ -1,0 +1,15 @@
+Services : 
+
+Add All This services 
+
+GABION #008000
+Clôture sportives #8B0000
+Clôtures Agricoles #8B0000
+Clôtures Professionnelles #8B0000
+Clôtures chantier #8B0000
+Barreaudage #8B0000
+Clôtures en fil de fer barbelé #8B0000
+Poteaux & Accesoires #8B0000
+Portails métalliques #8B0000
+
+each service must be in a route
