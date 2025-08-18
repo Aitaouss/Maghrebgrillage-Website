@@ -3,13 +3,18 @@ Services :
 Add All This services 
 
 GABION #008000
-Clôture sportives #8B0000
-Clôtures Agricoles #8B0000
-Clôtures Professionnelles #8B0000
-Clôtures chantier #8B0000
-Barreaudage #8B0000
-Clôtures en fil de fer barbelé #8B0000
-Poteaux & Accesoires #8B0000
-Portails métalliques #8B0000
+Clôture sportives #008000
+Clôtures Agricoles #008000
+Clôtures Professionnelles #008000
+Clôtures chantier #008000
+Barreaudage #008000
+Clôtures en fil de fer barbelé #008000
+Poteaux & Accesoires #008000
+Portails métalliques #008000
+
+I have to update the font family and the footer of the service and add image compatible with the service
 
 each service must be in a route 
+
+
+#8B0000
