@@ -42,6 +42,10 @@ export default function GabionPage() {
                 projets d'aménagement
               </p>
               <Button
+                onClick={() => (
+                  console.log("Devis button clicked"),
+                  (window.location.href = "/")
+                )}
                 size="lg"
                 className="bg-[#02742c] hover:bg-[#02742c]/90 text-white font-sans cursor-pointer"
               >

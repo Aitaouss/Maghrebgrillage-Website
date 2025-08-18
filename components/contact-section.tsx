@@ -4,6 +4,59 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
+const agencies = [
+  {
+    city: "Casablanca",
+    address: "Km12, route 111 ZENATA Casablanca (à 1 km de TOYOTA)",
+    phone: [
+      "05 22 66 65 84",
+      "05 22 66 65 85",
+      "05 22 66 65 15",
+      "05 22 66 65 16",
+      "05 22 66 65 18",
+    ],
+    fax: "05 22 66 65 86",
+    email: ["contact@maghrebgrillage.ma", "info@maghrebgrillage.ma"],
+    horaires: [
+      "Lundi-Vendredi : 8h30 – 12h30 | 14h30 – 18h30",
+      "Samedi : 8h30 – 12h30",
+    ],
+  },
+  {
+    city: "Fès",
+    address: "KM 7, Route IMOUZZER OULAD TAIB",
+    phone: ["05 35 60 60 32"],
+    gsm: "06 66 14 51 88",
+    fax: "05 35 60 60 32",
+    email: ["fes@maghrebgrillage.ma"],
+    horaires: [
+      "Lundi-Vendredi : 8h30 – 12h30 | 14h30 – 18h30",
+      "Samedi : 8h30 – 12h30",
+    ],
+  },
+  {
+    city: "Agadir",
+    address: "Bloc 1, N°207 Hay Touhamou Lkblani Ait Melloul Agadir",
+    phone: ["0660 94 16 61"],
+    email: ["agadir@maghrebgrillage.ma"],
+    horaires: [
+      "Lundi-Vendredi : 8h30 – 12h30 | 14h30 – 18h30",
+      "Samedi : 8h30 – 12h30",
+    ],
+  },
+  {
+    city: "El Jadida",
+    address: "KM 5, N°01, route de Marrakech-Quartier industriel El JADIDA",
+    phone: ["05 23 37 75 85"],
+    gsm: "06 61 28 05 38",
+    email: ["eljadida@maghrebgrillage.ma"],
+    horaires: [
+      "Lundi-Vendredi : 8h30 – 12h30 | 14h30 – 18h30",
+      "Samedi : 8h30 – 12h30",
+    ],
+  },
+];
+
 export function ContactSection() {
   return (
     <section id="contact" className="py-20">
@@ -24,7 +77,7 @@ export function ContactSection() {
           <Card className="bg-card border-border">
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-card-foreground font-sans">
-                Demander un Devis Gratuit
+                Contactez-nous
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -62,7 +115,7 @@ export function ContactSection() {
 
               <div>
                 <label className="text-sm font-medium text-card-foreground mb-2 block font-sans">
-                  Type de projet
+                  Type de projet *
                 </label>
                 <select className="w-full p-3 rounded-md border border-border bg-input text-foreground font-sans">
                   <option>Clôture résidentielle</option>
@@ -73,10 +126,21 @@ export function ContactSection() {
                   <option>Autre</option>
                 </select>
               </div>
+              <div>
+                <label className="text-sm font-medium text-card-foreground mb-2 block font-sans">
+                  Budget *
+                </label>
+                <select className="w-full p-3 rounded-md border border-border bg-input text-foreground font-sans">
+                  <option>0Dhs - 10.000Dhs</option>
+                  <option>10.000Dhs - 50.000Dhs</option>
+                  <option>50.000Dhs - 100.000Dhs</option>
+                  <option>+100.000Dhs</option>
+                </select>
+              </div>
 
               <div>
                 <label className="text-sm font-medium text-card-foreground mb-2 block font-sans">
-                  Description du projet
+                  Message *
                 </label>
                 <Textarea
                   placeholder="Décrivez votre projet, dimensions approximatives, contraintes particulières..."
@@ -90,95 +154,53 @@ export function ContactSection() {
             </CardContent>
           </Card>
 
-          {/* Contact Info */}
+          {/* Contact Info per city */}
           <div className="space-y-8">
-            <Card className="bg-card border-border">
-              <CardContent className="p-8">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                    <Phone className="h-6 w-6 text-primary-foreground" />
+            {agencies.map((agency) => (
+              <Card key={agency.city} className="bg-card border-border">
+                <CardHeader>
+                  <CardTitle className="text-xl font-bold text-card-foreground">
+                    {agency.city}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-primary mt-1" />
+                    <p>{agency.address}</p>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-card-foreground font-sans">
-                      Téléphone
-                    </h3>
-                    <p className="text-muted-foreground font-sans">
-                      Appelez-nous directement
-                    </p>
+                  {agency.phone && (
+                    <div className="flex items-start gap-3">
+                      <Phone className="w-5 h-5 text-primary mt-1" />
+                      <div>
+                        {agency.phone.map((num, i) => (
+                          <p key={i}>{num}</p>
+                        ))}
+                        {agency.gsm && <p>GSM : {agency.gsm}</p>}
+                        {agency.fax && <p>Fax : {agency.fax}</p>}
+                      </div>
+                    </div>
+                  )}
+                  {agency.email && (
+                    <div className="flex items-start gap-3">
+                      <Mail className="w-5 h-5 text-primary mt-1" />
+                      <div>
+                        {agency.email.map((mail, i) => (
+                          <p key={i}>{mail}</p>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  <div className="flex items-start gap-3">
+                    <Clock className="w-5 h-5 text-primary mt-1" />
+                    <div>
+                      {agency.horaires.map((h, i) => (
+                        <p key={i}>{h}</p>
+                      ))}
+                    </div>
                   </div>
-                </div>
-                <p className="text-lg font-semibold font-sans">
-                  +212 5 22 48 85 85
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card border-border">
-              <CardContent className="p-8">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
-                    <Mail className="h-6 w-6 text-accent-foreground" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-card-foreground font-sans">
-                      Email
-                    </h3>
-                    <p className="text-muted-foreground font-sans">
-                      Écrivez-nous
-                    </p>
-                  </div>
-                </div>
-                <p className="text-lg font-semibold  font-sans">
-                  contact@maghrebgrillage.ma
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card border-border">
-              <CardContent className="p-8">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                    <MapPin className="h-6 w-6 text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-card-foreground font-sans">
-                      Adresse
-                    </h3>
-                    <p className="text-muted-foreground font-sans">
-                      Visitez notre showroom
-                    </p>
-                  </div>
-                </div>
-                <p className="text-lg font-semibold  font-sans">
-                  Zone Industrielle Sidi Bernoussi
-                  <br />
-                  Casablanca, Maroc
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card border-border">
-              <CardContent className="p-8">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
-                    <Clock className="h-6 w-6 text-accent-foreground" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-card-foreground font-sans">
-                      Horaires
-                    </h3>
-                    <p className="text-muted-foreground font-sans">
-                      Nos heures d'ouverture
-                    </p>
-                  </div>
-                </div>
-                <div className=" font-semibold">
-                  <p>Lun-Ven: 8h00 - 18h00</p>
-                  <p>Samedi: 8h00 - 16h00</p>
-                  <p>Dimanche: Fermé</p>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </div>

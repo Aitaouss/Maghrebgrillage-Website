@@ -104,7 +104,15 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-accent transition-colors">
+                <a
+                  onClick={() => {
+                    window.open(
+                      "https://maghrebgrillage.ma/wp-content/uploads/2019/09/MAGHREB-GRILLAGE-BROCH-2019-FINAL.pdf",
+                      "_blank" // open in new tab
+                    );
+                  }}
+                  className="hover:text-accent transition-colors"
+                >
                   Catalogue Produits
                 </a>
               </li>

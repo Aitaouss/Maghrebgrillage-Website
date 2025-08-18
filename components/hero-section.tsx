@@ -38,6 +38,9 @@ export function HeroSection() {
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
+                onClick={() => {
+                  window.location.href = "#contact";
+                }}
                 size="lg"
                 variant="outline"
                 className="border-2 border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-4 bg-transparent cursor-pointer"

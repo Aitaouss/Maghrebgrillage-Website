@@ -82,7 +82,7 @@ export function Header() {
                 Accueil
               </a>
               <a
-                // href="#services"
+                href="#services"
                 onClick={() =>
                   window.scrollTo({
                     top: document.getElementById("services")?.offsetTop || 0,
@@ -106,6 +106,7 @@ export function Header() {
                 Produits
               </a>
               <a
+                href="#a-propos"
                 onClick={() =>
                   window.scrollTo({
                     top: document.getElementById("a-propos")?.offsetTop || 0,
@@ -117,6 +118,7 @@ export function Header() {
                 À Propos
               </a>
               <a
+                href="#contact"
                 onClick={() =>
                   window.scrollTo({
                     top: document.getElementById("contact")?.offsetTop || 0,
