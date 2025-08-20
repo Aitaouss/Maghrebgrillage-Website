@@ -1,13 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Home, Building, Shield, Phone, Mail } from "lucide-react";
+import {
+  CheckCircle,
+  Home,
+  Building,
+  Shield,
+  Phone,
+  Mail,
+  TestTube2,
+} from "lucide-react";
+import Image from "next/image";
 
 export default function BarreaudagePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-50 to-slate-100 py-20">
+      <section className="relative py-20 bg-gradient-to-r from-gray-100 to-gray-50 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 font-sans">
@@ -42,110 +51,83 @@ export default function BarreaudagePage() {
       </section>
 
       {/* Products Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-16 px-4">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Nos Solutions de Barreaudage
+            <h2 className="font-sans text-3xl md:text-4xl font-bold text-[#444d55] mb-4">
+              Panneau Soudé Rigide
             </h2>
-            <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto font-sans">
-              Gamme complète de barreaux métalliques pour fenêtres, balcons et
-              terrasses
-            </p>
+            <div className="w-16 h-1 bg-[#02742c] mx-auto mb-6"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="border-slate-200 hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <img
-                  src="https://maghrebgrillage.ma/wp-content/uploads/2016/05/gabion-del-muro-de-contencin-47097953-1030x650-1-495x400.jpg"
-                  alt="Barreaux de fenêtre"
-                  className="w-full h-48 object-cover rounded-lg mb-4"
-                />
-                <h3 className="text-xl font-semibold text-slate-900 mb-3 font-sans">
-                  Barreaux de Fenêtre
-                </h3>
-                <p className="text-slate-600 mb-4 font-sans">
-                  Protection élégante pour vos fenêtres avec designs
-                  personnalisables.
-                </p>
-                <ul className="space-y-2 mb-4">
-                  <li className="flex items-center text-sm text-slate-600 font-sans">
-                    <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                    Acier galvanisé
-                  </li>
-                  <li className="flex items-center text-sm text-slate-600 font-sans">
-                    <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                    Designs variés
-                  </li>
-                  <li className="flex items-center text-sm text-slate-600 font-sans">
-                    <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                    Sur mesure
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Image */}
+            <div>
+              <Image
+                src="https://maghrebgrillage.ma/wp-content/uploads/2016/07/barreaudage.jpg"
+                alt="Panneau Soudé Rigide"
+                width={600}
+                height={400}
+                className="rounded-lg shadow-lg"
+              />
+            </div>
 
-            <Card className="border-slate-200 hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <img
-                  src="https://maghrebgrillage.ma/wp-content/uploads/2016/05/gabion-del-muro-de-contencin-47097953-1030x650-1-495x400.jpg"
-                  alt="Garde-corps balcon"
-                  className="w-full h-48 object-cover rounded-lg mb-4"
-                />
-                <h3 className="text-xl font-semibold text-slate-900 mb-3 font-sans">
-                  Garde-Corps Balcon
-                </h3>
-                <p className="text-slate-600 mb-4 font-sans">
-                  Sécurité et esthétique pour vos balcons et terrasses.
-                </p>
-                <ul className="space-y-2 mb-4">
-                  <li className="flex items-center text-sm text-slate-600 font-sans">
-                    <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                    Hauteur réglementaire
-                  </li>
-                  <li className="flex items-center text-sm text-slate-600 font-sans">
-                    <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                    Finitions variées
-                  </li>
-                  <li className="flex items-center text-sm text-slate-600 font-sans">
-                    <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                    Installation rapide
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+            {/* Text Content */}
+            <div>
+              <Badge className="bg-[#02742c] text-white mb-4">
+                Panneau Soudé Rigide
+              </Badge>
+              <h3 className="font-sans text-2xl font-bold text-[#444d55] mb-4">
+                Clôture Résistante et Durable
+              </h3>
 
-            <Card className="border-slate-200 hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <img
-                  src="https://maghrebgrillage.ma/wp-content/uploads/2016/05/gabion-del-muro-de-contencin-47097953-1030x650-1-495x400.jpg"
-                  alt="Barreaudage décoratif"
-                  className="w-full h-48 object-cover rounded-lg mb-4"
-                />
-                <h3 className="text-xl font-semibold text-slate-900 mb-3 font-sans">
-                  Barreaudage Décoratif
-                </h3>
-                <p className="text-slate-600 mb-4 font-sans">
-                  Éléments décoratifs alliant sécurité et design architectural.
-                </p>
-                <ul className="space-y-2 mb-4">
-                  <li className="flex items-center text-sm text-slate-600 font-sans">
-                    <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                    Motifs artistiques
-                  </li>
-                  <li className="flex items-center text-sm text-slate-600 font-sans">
-                    <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                    Fer forgé
-                  </li>
-                  <li className="flex items-center text-sm text-slate-600 font-sans">
-                    <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                    Personnalisable
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-[#02742c]" />
+                  <span>Revêtement : Galvanisé ou plastifié</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-[#02742c]" />
+                  <span>Diamètre du fil : 4 / 5 / 6 / 8 mm</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-[#02742c]" />
+                  <span>
+                    Maille : carré ou rectangulaire (200×50 – 50×50 – 100×50 –
+                    150×100 mm)
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-[#02742c]" />
+                  <span>
+                    Hauteurs disponibles : 1m – 1,2m – 1,5m – 2m – 2,5m – 3m
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-[#02742c]" />
+                  <span>Longueur panneau : 2,5 ml</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-[#02742c]" />
+                  <span>Finition : Galvanisation à chaud</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-[#02742c]" />
+                  <span>Couleur standard : Vert RAL 6005</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-[#02742c]" />
+                  <span>Fixation poteau : à sceller ou à visser</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-[#02742c]" />
+                  <span>
+                    Utilisation : Sites industriels, Ports, Aéroports, Stades,
+                    Terrains multisports…
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -212,7 +194,7 @@ export default function BarreaudagePage() {
       {/* Contact Section */}
       <section className="py-16 bg-primary text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-sans">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 ">
             Projet de Barreaudage ?
           </h2>
           <p className="text-xl mb-8 opacity-90 font-sans">
@@ -242,3 +224,8 @@ export default function BarreaudagePage() {
     </div>
   );
 }
+
+// https://maghrebgrillage.ma/wp-content/uploads/2016/07/baraudage-1030x773-495x400.jpg
+// https://maghrebgrillage.ma/wp-content/uploads/2016/07/image001-1.jpg
+// https://maghrebgrillage.ma/wp-content/uploads/2016/07/barreaudage.jpg
+// https://maghrebgrillage.ma/wp-content/uploads/2016/07/image007-1.jpg
