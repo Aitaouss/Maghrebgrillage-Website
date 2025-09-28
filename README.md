@@ -1,4 +1,4 @@
-<img width="1906" height="958" alt="image" src="https://github.com/user-attachments/assets/42267449-245e-4f4b-98ae-da3069a82492" /># 🏗️ Maghreb Grillage - Landing Page
+🏗️ Maghreb Grillage - Landing Page
 
 ![Maghreb Grillage preview](https://i.ibb.co/kgb6wDhc/image.png)
 ![Maghreb Grillage preview 2](https://i.ibb.co/KcTHf159/maghrefb.png)
