@@ -2,14 +2,35 @@
 
 import { Button } from "@/components/ui/button";
 import { IoList } from "react-icons/io5";
-
-import { Phone, Mail, MapPin } from "lucide-react";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import { Phone, Mail, MapPin, ChevronDown } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export function Header() {
   const [sizeLg, setSizeLg] = useState<number>(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+
+  const services = [
+    { name: "Barreaudage", href: "/barreaudage" },
+    { name: "Clôture Chantier", href: "/cloture-chantier" },
+    { name: "Clôture Professionnelle", href: "/cloture-professionnelle" },
+    { name: "Clôtures Sportives", href: "/cloture-sportives" },
+    { name: "Clôtures Agricoles", href: "/clotures-agricoles" },
+    { name: "Clôtures en Fil de Fer Barbelé", href: "/clotures-en-fil-de-fer-barbele" },
+    { name: "Gabion", href: "/gabion" },
+    { name: "Portails Métalliques", href: "/portails-metalliques" },
+    { name: "Poteaux & Accessoires", href: "/poteaux-accessoires" },
+  ];
 
   const handleResize = () => {
     setSizeLg(window.innerWidth);
@@ -81,18 +102,31 @@ export function Header() {
               >
                 Accueil
               </a>
-              <a
-                href="#services"
-                onClick={() =>
-                  window.scrollTo({
-                    top: document.getElementById("services")?.offsetTop || 0,
-                    behavior: "smooth",
-                  })
-                }
-                className="text-foreground hover:text-[#02742c] transition-all dration-200 cursor-pointer hover:border-b-2 hover:border-[#02742c] hover:pb-1"
-              >
-                Nos Services
-              </a>
+              <NavigationMenu>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className="bg-transparent text-foreground hover:text-[#02742c] transition-all duration-200 data-[state=open]:bg-transparent data-[active]:bg-transparent focus:bg-transparent">
+                      Nos Services
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                        {services.map((service) => (
+                          <NavigationMenuLink key={service.href} asChild>
+                            <Link
+                              href={service.href}
+                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            >
+                              <div className="text-sm font-medium leading-none">
+                                {service.name}
+                              </div>
+                            </Link>
+                          </NavigationMenuLink>
+                        ))}
+                      </div>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
               <a
                 href="#produits"
                 onClick={() =>
@@ -151,12 +185,33 @@ export function Header() {
             >
               Accueil
             </a>
-            <a
-              onClick={() => handleScrollTo("services")}
-              className="cursor-pointer hover:text-[#02742c]"
-            >
-              Nos Services
-            </a>
+            <div>
+              <div
+                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                className="cursor-pointer hover:text-[#02742c] flex items-center justify-between"
+              >
+                Nos Services
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${
+                    mobileServicesOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </div>
+              {mobileServicesOpen && (
+                <div className="mt-2 ml-4 flex flex-col gap-2">
+                  {services.map((service) => (
+                    <Link
+                      key={service.href}
+                      href={service.href}
+                      className="cursor-pointer hover:text-[#02742c] text-sm"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {service.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
             <a
               onClick={() => handleScrollTo("produits")}
               className="cursor-pointer hover:text-[#02742c]"

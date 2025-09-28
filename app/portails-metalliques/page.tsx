@@ -1,11 +1,34 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Home, Car, Shield, Zap, Phone, Mail } from "lucide-react";
+import {
+  CheckCircle,
+  Home,
+  Car,
+  Shield,
+  Zap,
+  Phone,
+  Mail,
+  ArrowLeft,
+} from "lucide-react";
+import Link from "next/link";
 
 export default function PortailsMetalliquesPage() {
   return (
     <div className="min-h-screen bg-background">
+      {/* Return to Home Button */}
+      <div className="container mx-auto px-4 pt-4">
+        <Link href="/">
+          <Button
+            variant="ghost"
+            className="mb-4 text-primary hover:text-white font-sans cursor-pointer"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Retour à l'Accueil
+          </Button>
+        </Link>
+      </div>
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-slate-50 to-slate-100 py-20">
         <div className="container mx-auto px-4">

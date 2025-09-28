@@ -13,50 +13,86 @@ import {
   TreePine,
   Shield,
   Wrench,
+  Square,
+  Construction,
+  DoorOpen,
+  Grid3X3,
+  Zap,
 } from "lucide-react";
+import Link from "next/link";
 
 const services = [
   {
-    icon: Home,
-    title: "Clôtures Résidentielles",
+    icon: Square,
+    title: "Barreaudage",
     description:
-      "Solutions élégantes et sécurisées pour votre domicile. Grillages décoratifs, portails automatiques et clôtures sur mesure.",
-    image: "/moroccan-fence-gate.png",
+      "Solutions de barreaudage alliant esthétique et sécurité. Barreaux métalliques sur mesure pour protéger vos propriétés avec style.",
+    image: "/placeholder.svg",
+    href: "/barreaudage",
+  },
+  {
+    icon: Construction,
+    title: "Clôture Chantier",
+    description:
+      "Clôtures temporaires sécurisées pour chantiers. Solutions robustes et facilement démontables pour vos projets de construction.",
+    image: "/placeholder.svg",
+    href: "/cloture-chantier",
   },
   {
     icon: Building2,
-    title: "Clôtures Commerciales",
+    title: "Clôture Professionnelle",
     description:
-      "Protection professionnelle pour entreprises, bureaux et centres commerciaux. Sécurité renforcée et design moderne.",
+      "Clôtures haute sécurité pour sites professionnels. Solutions renforcées pour entreprises et zones industrielles.",
     image: "/modern-office-security.png",
+    href: "/cloture-professionnelle",
   },
   {
     icon: Factory,
-    title: "Clôtures Industrielles",
+    title: "Clôtures Sportives",
     description:
-      "Solutions robustes pour sites industriels, entrepôts et zones de stockage. Résistance maximale et conformité aux normes.",
-    image: "/industrial-security-fence.png",
+      "Clôtures spécialisées pour installations sportives. Terrains de sport, gymnases et complexes sportifs sécurisés.",
+    image: "/placeholder.svg",
+    href: "/cloture-sportives",
   },
   {
     icon: TreePine,
     title: "Clôtures Agricoles",
     description:
-      "Protection efficace pour exploitations agricoles, élevages et terrains ruraux. Durabilité face aux intempéries.",
+      "Protection efficace pour exploitations agricoles et élevages. Solutions durables adaptées aux environnements ruraux.",
     image: "/moroccan-farm-fence.png",
+    href: "/clotures-agricoles",
   },
   {
-    icon: Shield,
-    title: "Sécurité Périmétrique",
+    icon: Zap,
+    title: "Clôtures en Fil de Fer Barbelé",
     description:
-      "Systèmes de sécurité avancés avec détection d'intrusion, caméras et contrôle d'accès intégrés.",
-    image: "/high-security-fence.png",
+      "Protection haute sécurité avec fil de fer barbelé. Solutions robustes pour périmètres industriels et commerciaux.",
+    image: "/placeholder.svg",
+    href: "/clotures-en-fil-de-fer-barbele",
+  },
+  {
+    icon: Grid3X3,
+    title: "Gabion",
+    description:
+      "Murs de soutènement en gabion pour aménagement paysager. Solutions esthétiques et fonctionnelles pour vos terrains.",
+    image: "/placeholder.svg",
+    href: "/gabion",
+  },
+  {
+    icon: DoorOpen,
+    title: "Portails Métalliques",
+    description:
+      "Portails métalliques sur mesure manuels et automatisés. Solutions d'accès sécurisées alliant design et fonctionnalité.",
+    image: "/placeholder.svg",
+    href: "/portails-metalliques",
   },
   {
     icon: Wrench,
-    title: "Installation & Maintenance",
+    title: "Poteaux & Accessoires",
     description:
-      "Service complet d'installation professionnelle et maintenance préventive pour garantir la longévité.",
-    image: "/fence-installation-morocco.png",
+      "Poteaux de qualité et accessoires de fixation. Gamme complète pour l'installation et la maintenance de vos clôtures.",
+    image: "/placeholder.svg",
+    href: "/poteaux-accessoires",
   },
 ];
 
@@ -66,9 +102,9 @@ export function ServicesSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <div className="flex justify-center mb-6">
-            <h2 className="section-header">Nos Services</h2>
+            <h2 className="section-header font-sans">Nos Services</h2>
           </div>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-sans">
             Des solutions complètes de clôture et grillage adaptées à tous vos
             besoins. Expertise technique, matériaux de qualité et service client
             exceptionnel.
@@ -92,20 +128,22 @@ export function ServicesSection() {
                 </div>
               </div>
               <CardHeader>
-                <CardTitle className="text-xl font-bold text-card-foreground">
+                <CardTitle className="text-xl font-bold text-card-foreground font-sans">
                   {service.title}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-muted-foreground mb-4 leading-relaxed">
+                <CardDescription className="text-muted-foreground mb-4 leading-relaxed font-sans">
                   {service.description}
                 </CardDescription>
-                <Button
-                  variant="outline"
-                  className="cursor-pointer w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent rounded-lg"
-                >
-                  En Savoir Plus
-                </Button>
+                <Link href={service.href}>
+                  <Button
+                    variant="outline"
+                    className="cursor-pointer w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent rounded-lg font-sans"
+                  >
+                    En Savoir Plus
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}

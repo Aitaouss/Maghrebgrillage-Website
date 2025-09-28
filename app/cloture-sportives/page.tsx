@@ -3,8 +3,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Trophy, Shield, Target } from "lucide-react";
+import { CheckCircle, Trophy, Shield, Target, ArrowLeft } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function ClôtureSportivesPage() {
@@ -19,6 +20,19 @@ export default function ClôtureSportivesPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Return to Home Button */}
+      <div className="container mx-auto px-4 pt-4">
+        <Link href="/">
+          <Button
+            variant="ghost"
+            className="mb-4 text-primary hover:text-white font-sans cursor-pointer"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Retour à l'Accueil
+          </Button>
+        </Link>
+      </div>
+
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50 z-10" />
