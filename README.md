@@ -1,7 +1,7 @@
 🏗️ Maghreb Grillage - Landing Page
 
-![Maghreb Grillage preview](https://i.ibb.co/kgb6wDhc/image.png)
 ![Maghreb Grillage preview 2](https://i.ibb.co/KcTHf159/maghrefb.png)
+![Maghreb Grillage preview](https://i.ibb.co/kgb6wDhc/image.png)
 
 Une page d'accueil moderne et responsive pour Maghreb Grillage, spécialiste en clôtures, grillages et solutions de sécurité au Maroc.
 
